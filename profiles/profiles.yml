@@ -1,0 +1,34 @@
+config:
+  send_anonymous_usage_stats: true
+  use_colors: true
+  # [partial_parse](global-configs#partial-parsing): <true | false>
+  # [printer_width](global-configs#printer-width): <integer>
+  # [write_json](global-configs#writing-json-artifacts): <true | false>
+  # [warn_error](global-configs#warnings-as-errors): <true | false>
+  # [log_format](global-configs#log-formatting): <true | false>
+  # [debug](global-configs#debug-level-logging): <true | false>
+  # [version_check](global-configs#checking-version-compatibility): <true | false>
+  # [fail_fast](global-configs#failing-fast): <true | false>
+  # [use_experimental_parser](global-configs#experimental-parser): <true | false>
+  # [static_parser](global-configs#static-parser): <true | false>
+
+edward:
+  target: dev # this is the default target
+  outputs:
+    dev: 
+      type: bigquery
+      method: service-account
+      project: dbt-tutorials-365116
+      dataset: jaffle_shop # You can also use "schema" here
+      #location: europe-west1
+      threads: 3
+      keyfile: /Users/edward/Documents/dbt-tutorials-365116-279923d3bb0b.json
+
+#       ### database-specific connection details
+#       ...
+
+#     <target-name>: # additional targets
+#       ...
+
+# <profile-name>: # additional profiles
+#   ...

@@ -38,7 +38,7 @@ final as (
 
     from customers
 
-    left join customer_orders using (customer_id) . 
+    left join customer_orders using (customer_id)
 
 )
 
